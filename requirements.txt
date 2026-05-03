@@ -1,0 +1,20 @@
+# requirements.txt
+
+# Core
+python-dotenv==1.0.1
+pyyaml==6.0.2
+pandas==2.2.3
+
+# Email HTML parsing
+beautifulsoup4==4.12.3
+
+# Dashboard
+streamlit==1.43.2
+plotly==5.22.0
+
+# Email (stdlib — no install needed)
+# imaplib, email, re, csv, json, os, hashlib, datetime
+
+# Phase 2 — install when ready
+# google-generativeai==0.8.3
+# pdfplumber==0.11.4

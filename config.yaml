@@ -1,0 +1,12 @@
+# config.yaml
+gmail:
+  address: ${GMAIL_ADDRESS}
+  app_password: ${GMAIL_APP_PASSWORD}
+
+parser:
+  days_back: 90
+  max_emails_per_bank: 500
+
+output:
+  csv_path: data/transactions.csv
+  json_path: data/transactions.json
