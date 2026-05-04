@@ -1,4 +1,4 @@
-# requirements.txt
+# requirements.txt — SmartCC Spend Optimizer
 
 # Core
 python-dotenv==1.0.1
@@ -7,14 +7,18 @@ pandas==2.2.3
 
 # Email HTML parsing
 beautifulsoup4==4.12.3
+lxml==5.2.2          # faster HTML parser for BeautifulSoup
 
 # Dashboard
 streamlit==1.43.2
 plotly==5.22.0
 
-# Email (stdlib — no install needed)
-# imaplib, email, re, csv, json, os, hashlib, datetime
+# stdlib (no install needed): imaplib, email, re, csv, json, os, hashlib, datetime, argparse
 
-# Phase 2 — install when ready
-# google-generativeai==0.8.3
-# pdfplumber==0.11.4
+# ─── Phase 2: LLM Agent + RAG ──────────────────────────────────────────────────
+# Uncomment when ready to add AI-powered features:
+# anthropic>=0.28.0          # Claude API for NL spend Q&A and advice
+# mcp>=1.0.0                 # Model Context Protocol for tool integrations
+# chromadb>=0.5.0            # local vector store for transaction RAG
+# sentence-transformers>=3.0 # embedding model for semantic search
+# pdfplumber>=0.11.4         # parse paper statements / e-statements

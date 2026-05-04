@@ -1,0 +1,23 @@
+# credentials & secrets
+.env
+
+# transaction data (may contain personal spend info)
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

@@ -1,12 +1,55 @@
-# config.yaml
+# config.yaml — SmartCC Spend Optimizer
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ─── Gmail (credentials stay in .env) ─────────────────────────────────────────
 gmail:
   address: ${GMAIL_ADDRESS}
   app_password: ${GMAIL_APP_PASSWORD}
 
-parser:
-  days_back: 90
+# ─── Fetch Settings ────────────────────────────────────────────────────────────
+fetch:
+  days_back: 90           # default look-back; overridden by --days CLI flag
   max_emails_per_bank: 500
 
+# ─── Output Paths ──────────────────────────────────────────────────────────────
 output:
-  csv_path: data/transactions.csv
+  csv_path:  data/transactions.csv
   json_path: data/transactions.json
+
+# ─── Your Credit Cards ─────────────────────────────────────────────────────────
+# last_four  : matches the last-4-digit suffix in bank alert emails (e.g. XX9930 → "9930")
+# name       : friendly label shown in the dashboard
+# catalog_id : links to a card in card_catalog.py for cashback rate lookups
+#              available IDs: hdfc_millennia | hdfc_cashback | hdfc_swiggy |
+#                             icici_amazon_pay | axis_ace | axis_flipkart |
+#                             sbi_cashback | sbi_simply_click |
+#                             idfc_first_wealth | amex_mrcc
+#
+# Add / remove entries to match the cards you actually own.
+
+cards:
+  - bank: hdfc
+    last_four: "9930"
+    name: "HDFC Millennia"
+    catalog_id: hdfc_millennia
+
+  # ── Uncomment and fill in your other cards ──────────────────────────────────
+  # - bank: sbi
+  #   last_four: "5678"
+  #   name: "SBI Cashback Card"
+  #   catalog_id: sbi_cashback
+
+  # - bank: axis
+  #   last_four: "9012"
+  #   name: "Axis ACE"
+  #   catalog_id: axis_ace
+
+  # - bank: idfc
+  #   last_four: "3456"
+  #   name: "IDFC FIRST Wealth"
+  #   catalog_id: idfc_first_wealth
+
+  # - bank: icici
+  #   last_four: "1111"
+  #   name: "ICICI Amazon Pay"
+  #   catalog_id: icici_amazon_pay
